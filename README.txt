@@ -54,3 +54,12 @@ CppUnitLite. The simplest usage is through the function
 A lower-level function, just applying ORSA with no refinement:
   HomographyModel model(xA, w1, h1, xB, w2, h2);
   model.orsa(vec_inliers, 10000, 0, &H);
+
+#Usage
+(1) When match points in inliner.txt: x1 y1 x2 y2
+    ./demo_orsa_homography -r  ../../data/carc1.jpg ../../data/carc2.jpg inliner.txt in.txt in.jpg out.jpg pano.jpg
+    then, the new inliners filtered by Orsa be written in in.txt
+
+(2) When match points need to be get:
+    ./demo_orsa_homography ../../data/carc1.jpg ../../data/carc2.jpg all.txt in.txt in.jpg out.jpg pano.jpg
+    then, all point pairs saved in all.txt, and filtered match points saved in in.txt
